@@ -74,7 +74,7 @@ public class EditActivity extends AppCompatActivity {
         HashMap<String,Object> mapContact=new HashMap<>();
         mapContact.put("name",nameOfContact);
         mapContact.put("phone",phoneOfContact);
-        dbRef.child("Contacts").setValue(mapContact).addOnCompleteListener(new OnCompleteListener<Void>() {
+        dbRef.child("Contacts").child(nameOfContact).setValue(mapContact).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){
