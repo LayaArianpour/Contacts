@@ -3,16 +3,16 @@ package com.example.contacts;
 public class Contacts {
     String name;
     String phone;
-  //  String firstCharacter_nameOfContact;
+    String firstCharacterOfName;
 
     Contacts(){
 
     }
 
-    public Contacts(String name, String phone) {
+    public Contacts(String name, String phone ,String firstCharacterOfName) {
         this.name = name;
         this.phone = phone;
-       // this.firstCharacter_nameOfContact = firstCharacter_nameOfContact;
+        this.firstCharacterOfName = firstCharacterOfName;
     }
 
     public String getName() {
@@ -31,27 +31,12 @@ public class Contacts {
         this.phone = phone;
     }
 
-   /* public String getNameOfContact() {
-        return name;
+
+    public String getFirstCharacterOfName() {
+        return firstCharacterOfName;
     }
 
-    public void setNameOfContact(String nameOfContact) {
-        this.name = nameOfContact;
+    public void setFirstCharacterOfName(String firstCharacterOfName) {
+        this.firstCharacterOfName = firstCharacterOfName;
     }
-
-    public String getPhoneOfContact() {
-        return phone;
-    }
-
-    public void setPhoneOfContact(String phoneOfContact) {
-        this.phone = phoneOfContact;
-    }
-
-    public String getFirstCharacter_nameOfContact() {
-        return firstCharacter_nameOfContact;
-    }
-
-    public void setFirstCharacter_nameOfContact(String firstCharacter_nameOfContact) {
-        this.firstCharacter_nameOfContact = firstCharacter_nameOfContact;
-    }*/
 }

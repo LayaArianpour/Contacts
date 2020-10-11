@@ -49,6 +49,7 @@ public class EditActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String nameOfContact=editNameOfContact.getText().toString();
                 String phoneOfContact=editPhoneOfContact.getText().toString();
+                String firstCharacterOfName=String.valueOf(nameOfContact.charAt(0));
 
                 if(nameOfContact.isEmpty()||phoneOfContact.isEmpty())
                 {
@@ -62,7 +63,7 @@ public class EditActivity extends AppCompatActivity {
                 }
 
                 else {
-                    registerContact(nameOfContact,phoneOfContact);
+                    registerContact(nameOfContact,phoneOfContact,firstCharacterOfName);
                 }
             }
         });
@@ -70,10 +71,11 @@ public class EditActivity extends AppCompatActivity {
 
 
 
-    private void registerContact(String nameOfContact, String phoneOfContact) {
+    private void registerContact(String nameOfContact, String phoneOfContact,String firstCharacterOfName) {
         HashMap<String,Object> mapContact=new HashMap<>();
         mapContact.put("name",nameOfContact);
         mapContact.put("phone",phoneOfContact);
+        mapContact.put("firstCharacterOfName",firstCharacterOfName);
         dbRef.child("Contacts").child(nameOfContact).setValue(mapContact).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

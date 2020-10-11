@@ -1,20 +1,28 @@
 package com.example.contacts;
 
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Random;
+
 import android.content.Context;
 
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHolder> {
 
     Context context;
     ArrayList<Contacts> contacts;
+    int r=0,g=0,b=0;
 
     public ContactAdapter(Context c,ArrayList<Contacts> contacts) {
         this.contacts=contacts;
@@ -32,7 +40,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Contacts contact=contacts.get(position);
-       // holder.txtFirstCharacterNameOfContact.setText(contact.getFirstCharacter_nameOfContact());
+        holder.firstCharacterOfName.setText(contact.getFirstCharacterOfName());
         holder.name.setText(contact.getName());
         holder.phone.setText(contact.getPhone());
     }
@@ -44,13 +52,14 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-       // public TextView txtFirstCharacterNameOfContact;
+        public TextView firstCharacterOfName;
         public TextView name;
         public TextView phone;
 
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-           // txtFirstCharacterNameOfContact=(itemView).findViewById(R.id.txt_firstCharacterNameOfContact);
+            firstCharacterOfName=(itemView).findViewById(R.id.txt_firstCharacterNameOfContact);
             name=(itemView).findViewById(R.id.txt_nameOfContact);
             phone=(itemView).findViewById(R.id.txt_phoneOfContact);
 
