@@ -9,13 +9,29 @@ public class Contacts {
 
     }
 
-    public Contacts(String nameOfContact, String phoneOfContact, String firstCharacter_nameOfContact) {
-        this.name = nameOfContact;
-        this.phone = phoneOfContact;
+    public Contacts(String name, String phone) {
+        this.name = name;
+        this.phone = phone;
        // this.firstCharacter_nameOfContact = firstCharacter_nameOfContact;
     }
 
-    public String getNameOfContact() {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+   /* public String getNameOfContact() {
         return name;
     }
 
@@ -31,7 +47,7 @@ public class Contacts {
         this.phone = phoneOfContact;
     }
 
-   /* public String getFirstCharacter_nameOfContact() {
+    public String getFirstCharacter_nameOfContact() {
         return firstCharacter_nameOfContact;
     }
 

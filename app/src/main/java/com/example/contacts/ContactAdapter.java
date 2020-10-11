@@ -33,8 +33,8 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Contacts contact=contacts.get(position);
        // holder.txtFirstCharacterNameOfContact.setText(contact.getFirstCharacter_nameOfContact());
-        holder.name.setText(contact.getNameOfContact());
-        holder.phone.setText(contact.getPhoneOfContact());
+        holder.name.setText(contact.getName());
+        holder.phone.setText(contact.getPhone());
     }
 
     @Override

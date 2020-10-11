@@ -22,8 +22,8 @@ public class ContactAdapter_FirebaseRecyclerOption extends FirebaseRecyclerAdapt
     protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull Contacts model) {
 
       //  holder.txtFirstCharacterNameOfContact.setText(model.getFirstCharacter_nameOfContact());
-        holder.name.setText(model.getNameOfContact());
-        holder.phone.setText(model.getPhoneOfContact());
+        holder.name.setText(model.getName());
+        holder.phone.setText(model.getPhone());
     }
 
     @NonNull
